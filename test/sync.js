@@ -1,0 +1,32 @@
+import {expect} from 'chai';
+
+var intercept = require('../src/').sync;
+
+describe('sync()', function () {
+    it('should wrap a simple function', function () {
+        var foo = function(x, y) {
+            return x + y;
+        }
+        var wrapped = intercept(foo, function(fn, x, y) {
+            x = x * 2;
+            return fn(x, y);
+        });
+        var result = wrapped(2, 2);
+        expect(result).to.eq(6);
+    });
+
+    it('should keep `this` context properly', function () {
+        var foo = function(x, y) {
+            expect(this).to.have.property('name');
+            expect(this.name).to.eq('test');
+            return x + y;
+        }
+        var wrapped = intercept(foo, function(fn, x, y) {
+            expect(this).to.have.property('name');
+            expect(this.name).to.eq('test');
+            return fn.call(this, x, y);
+        });
+        var result = wrapped.call({name: 'test'}, 2, 2);
+        expect(result).to.eq(4);
+    });
+});
