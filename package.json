@@ -1,33 +1,44 @@
 {
-  "name": "node-intercept",
+  "name": "intercept",
   "version": "1.0.0",
-  "description": "Intercept function calls to run code before or after, or change arguments. ",
+  "description": "Intercept function calls to run code before or after, or change arguments.",
   "main": "./lib/index.js",
   "scripts": {
-    "test": "mocha",
+    "test-client": "./node_modules/karma/bin/karma start --single-run",
+    "test-unit": "mocha",
+    "test": "npm run test-unit && npm run test-client",
+    "coverage": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- test/**/*.js -R spec",
     "compile": "babel -d lib/ src/",
     "prepublish": "npm run compile"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/benbria/node-intercept.git"
+    "url": "https://github.com/calvinwiebe/intercept.git"
   },
   "keywords": [
     "function",
     "test",
     "utility",
     "intercept",
-    "mock"
+    "mock",
+    "stub"
   ],
   "author": "Calvin Wiebe <calvin.wiebe@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/benbria/node-intercept/issues"
+    "url": "https://github.com/calvinwiebe/intercept/issues"
   },
-  "homepage": "https://github.com/benbria/node-intercept",
+  "homepage": "https://github.com/calvinwiebe/intercept",
   "devDependencies": {
     "babel": "^5.8.23",
+    "babelify": "^6.3.0",
     "chai": "^3.2.0",
+    "chai-as-promised": "^5.1.0",
+    "karma": "^0.13.9",
+    "karma-browserify": "^4.3.0",
+    "karma-chai": "^0.1.0",
+    "karma-chrome-launcher": "^0.2.0",
+    "karma-mocha": "^0.2.0",
     "mocha": "^2.3.2",
     "sinon": "^1.16.1"
   }
