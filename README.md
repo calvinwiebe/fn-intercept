@@ -1,4 +1,4 @@
-# `intercept`
+# `fn-intercept`
 
 Similar to what [sinon.js](http://sinonjs.org/) does to stub functions, but in a compact and super tiny library. Useful for debug mode in browsers where size is important, or where you want to use function intercepting outside of testing.
 
@@ -12,7 +12,7 @@ In the `syncObject/asyncObject` cases, it will take an object instance, and a fu
 
 // example of a simple sync function
 
-var intercept = require('intercept').sync;
+var intercept = require('fn-intercept').sync;
 
 var foo = function(x, y) {
   return x * y;
@@ -33,7 +33,7 @@ console.log(foo(1, 2));
 // This will output 3
 ```
 
-The same can be done for `async` functions, and functions that are members of an object. Please see the [tests](https://github.com/calvinwiebe/intercept/tree/master/test) for a bunch of examples.
+The same can be done for `async` functions, and functions that are members of an object. Please see the [tests](https://github.com/calvinwiebe/fn-intercept/tree/master/test) for a bunch of examples.
 
 # Promises
 
@@ -42,7 +42,7 @@ Nothing special needs to be done to support promises. You can simply use the `sy
 ## Example
 
 ```javascript
-var sync = require('intercept').sync;
+var sync = require('fn-intercept').sync;
 
 var foo = function(x, y) {
   return Promise.resolve(x + y);
@@ -70,19 +70,19 @@ wrapped(1, 1).then(function(result) {
 ## `sync(original, intercept)`
 
 Wrap a synchronous function.
-[examples](https://github.com/calvinwiebe/intercept/blob/master/test/sync.js)
+[examples](https://github.com/calvinwiebe/fn-intercept/blob/master/test/sync.js)
 
 ## `syncObject(obj, fnName, intercept)`
 
 Wrap a synchronous member function of an object.
-[examples](https://github.com/calvinwiebe/intercept/blob/master/test/syncObject.js)
+[examples](https://github.com/calvinwiebe/fn-intercept/blob/master/test/syncObject.js)
 
 ## `async(original, options, intercept, cbIntercept)`
 
 Wrap an asynchronous function.
-[examples](https://github.com/calvinwiebe/intercept/blob/master/test/async.js)
+[examples](https://github.com/calvinwiebe/fn-intercept/blob/master/test/async.js)
 
 ## `asyncObject(obj, fnName, options, intercept, cbIntercept)`
 
 Wrap an asynchronous member function of an object.
-[examples](https://github.com/calvinwiebe/intercept/blob/master/test/asyncObject.js)
+[examples](https://github.com/calvinwiebe/fn-intercept/blob/master/test/asyncObject.js)

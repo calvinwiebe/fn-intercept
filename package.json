@@ -1,5 +1,5 @@
 {
-  "name": "intercept",
+  "name": "fn-intercept",
   "version": "1.0.0",
   "description": "Intercept function calls to run code before or after, or change arguments.",
   "main": "./lib/index.js",
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/calvinwiebe/intercept.git"
+    "url": "https://github.com/calvinwiebe/fn-intercept.git"
   },
   "keywords": [
     "function",
@@ -26,9 +26,9 @@
   "author": "Calvin Wiebe <calvin.wiebe@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/calvinwiebe/intercept/issues"
+    "url": "https://github.com/calvinwiebe/fn-intercept/issues"
   },
-  "homepage": "https://github.com/calvinwiebe/intercept",
+  "homepage": "https://github.com/calvinwiebe/fn-intercept",
   "devDependencies": {
     "babel": "^5.8.23",
     "babelify": "^6.3.0",
