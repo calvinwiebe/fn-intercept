@@ -5,8 +5,10 @@
   "main": "./lib/index.js",
   "scripts": {
     "test-client": "./node_modules/karma/bin/karma start --single-run",
+    "test-client-ci": "./node_modules/karma/bin/karma start --browsers Firefox --single-run",
     "test-unit": "mocha",
     "test": "npm run test-unit && npm run test-client",
+    "test-ci": "npm run test-unit && npm run test-client-ci",
     "coverage": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- test/**/*.js -R spec",
     "compile": "babel -d lib/ src/",
     "prepublish": "npm run compile"
@@ -38,6 +40,7 @@
     "karma-browserify": "^4.3.0",
     "karma-chai": "^0.1.0",
     "karma-chrome-launcher": "^0.2.0",
+    "karma-firefox-launcher": "^0.1.7",
     "karma-mocha": "^0.2.0",
     "mocha": "^2.3.2",
     "sinon": "^1.16.1"
