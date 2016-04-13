@@ -8,7 +8,7 @@
     "test-client-ci": "./node_modules/karma/bin/karma start --browsers Firefox --single-run",
     "test-unit": "mocha",
     "test": "npm run test-unit && npm run test-client",
-    "test-ci": "npm run test-unit && npm run test-client-ci",
+    "test-ci": "npm run coverage && npm run test-client-ci",
     "coverage": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- test/**/*.js -R spec",
     "compile": "babel -d lib/ src/",
     "prepublish": "npm run compile"
