@@ -36,6 +36,7 @@
     "babelify": "^6.3.0",
     "chai": "^3.2.0",
     "chai-as-promised": "^5.1.0",
+    "coveralls": "^2.11.9",
     "karma": "^0.13.9",
     "karma-browserify": "^4.3.0",
     "karma-chai": "^0.1.0",
