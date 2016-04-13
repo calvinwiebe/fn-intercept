@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/calvinwiebe/fn-intercept.svg?branch=master)](https://travis-ci.org/calvinwiebe/fn-intercept)
+[![Coverage Status](https://coveralls.io/repos/github/calvinwiebe/fn-intercept/badge.svg?branch=master)](https://coveralls.io/github/calvinwiebe/fn-intercept?branch=master)
+
 # `fn-intercept`
 
 Similar to what [sinon.js](http://sinonjs.org/) does to stub functions, but in a compact and super tiny library. Useful for debug mode in browsers where size is important, or where you want to use function intercepting outside of testing.
