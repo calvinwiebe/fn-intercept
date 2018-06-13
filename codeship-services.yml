@@ -1,0 +1,4 @@
+app:
+  build: .
+  environment:
+    NODE_ENV: production
