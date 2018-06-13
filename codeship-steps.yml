@@ -1,5 +1,5 @@
 - type: parallel
   steps:
   - name: tests
-    services: app
+    service: app
     command: npm test
