@@ -1,0 +1,4 @@
+- type: parallel
+  steps:
+  - name: tests
+    command: npm test
